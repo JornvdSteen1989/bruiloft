@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jorn & Reanne — Bruiloft op Château de Goyet</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#F7F4EE',
+                        paper: '#EFECE4',
+                        cardBg: '#FAF8F5',
+                        sepia: {
+                            DEFAULT: '#3E2B22',
+                            dark: '#2A1C15',
+                            light: '#6E594D',
+                            muted: '#9C887B',
+                            border: '#D8CFB9'
+                        }
+                    },
+                    fontFamily: {
+                        display: ['"Playfair Display"', 'serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F7F4EE;
+            color: #3E2B22;
+            background-image: radial-gradient(#3E2B22 0.25px, transparent 0.25px);
+            background-size: 20px 20px;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(62, 43, 34, 0.08), 0 4px 6px -2px rgba(62, 43, 34, 0.04);
+        }
+        .sepia-border-double {
+            border: 3px double #D8CFB9;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-sepia selection:bg-sepia selection:text-cream">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-sepia-border/40 transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#home" class="font-display text-xl sm:text-2xl tracking-widest text-sepia font-normal">
+                    JORN <span class="font-serif italic text-sepia-muted">&amp;</span> REANNE
+                </a>
+                
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8 font-serif text-lg tracking-wider">
+                    <a href="#home" class="hover:text-sepia-muted transition-colors duration-200">Home</a>
+                    <a href="#programma" class="hover:text-sepia-muted transition-colors duration-200">Programma</a>
+                    <a href="#locatie" class="hover:text-sepia-muted transition-colors duration-200">Locatie</a>
+                    <a href="#praktisch" class="hover:text-sepia-muted transition-colors duration-200">Praktisch</a>
+                    <a href="#rsvp" class="px-5 py-2 border border-sepia text-sepia hover:bg-sepia hover:text-cream transition-all duration-300 uppercase text-xs tracking-widest font-sans font-medium rounded-sm">RSVP</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 text-sepia focus:outline-none" aria-label="Open Menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-paper border-b border-sepia-border px-4 pt-2 pb-6 space-y-3 font-serif text-center text-lg">
+            <a href="#home" class="block py-2 text-sepia hover:text-sepia-muted" onclick="toggleMenu()">Home</a>
+            <a href="#programma" class="block py-2 text-sepia hover:text-sepia-muted" onclick="toggleMenu()">Programma</a>
+            <a href="#locatie" class="block py-2 text-sepia hover:text-sepia-muted" onclick="toggleMenu()">Locatie</a>
+            <a href="#praktisch" class="block py-2 text-sepia hover:text-sepia-muted" onclick="toggleMenu()">Praktisch</a>
+            <a href="#rsvp" class="inline-block mt-2 px-6 py-2 bg-sepia text-cream font-sans text-xs uppercase tracking-widest" onclick="toggleMenu()">RSVP Bevestigen</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="min-h-screen pt-28 pb-16 flex flex-col justify-center items-center text-center px-4 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto space-y-6">
+            
+            <span class="font-sans text-xs sm:text-sm uppercase tracking-[0.3em] text-sepia-light block">
+                Wij gaan trouwen &amp; vieren dit graag met je
+            </span>
+
+            <h1 class="font-display text-5xl sm:text-7xl lg:text-8xl font-normal tracking-wide text-sepia my-4">
+                Jorn <span class="font-serif italic text-4xl sm:text-6xl lg:text-7xl font-normal text-sepia-muted">&amp;</span> Reanne
+            </h1>
+
+            <!-- CHÂTEAU ILLUSTRATION IMAGE -->
+            <div class="my-6 flex justify-center">
+                <div class="p-3 sm:p-4 bg-white/60 border border-sepia-border/60 rounded-sm max-w-xs sm:max-w-sm md:max-w-md card-shadow">
+                    <img src="https://images.generated.photos/watermarked_img_1773619699012132196.jpg" 
+                         alt="Château de Goyet Illustratie" 
+                         class="w-full h-auto rounded-sm object-cover"
+                         onerror="this.onerror=null; this.src='https://placehold.co/600x750/F7F4EE/3E2B22?text=Chateau+de+Goyet';">
+                    <p class="font-serif text-sm italic text-sepia-light mt-3">Château de Goyet — Gesves, België</p>
+                </div>
+            </div>
+
+            <!-- Date Banner -->
+            <div class="border-y border-sepia-border py-4 my-6">
+                <p class="font-display text-2xl sm:text-3xl text-sepia tracking-widest uppercase">
+                    2 – 4 Juli 2027
+                </p>
+                <p class="font-sans text-xs tracking-wider text-sepia-light uppercase mt-1">
+                    Hoofddag: Zaterdag 3 Juli 2027
+                </p>
+            </div>
+
+            <!-- Live Countdown Timer -->
+            <div class="pt-4">
+                <h3 class="font-serif text-lg text-sepia-light italic mb-4">Aftellen tot onze grote dag:</h3>
+                <div id="countdown" class="grid grid-cols-4 gap-3 max-w-md mx-auto text-center font-serif">
+                    <div class="bg-paper p-3 border border-sepia-border/60 rounded-sm card-shadow">
+                        <span id="days" class="text-2xl sm:text-4xl text-sepia font-semibold block">000</span>
+                        <span class="text-[10px] sm:text-xs font-sans tracking-widest uppercase text-sepia-light">Dagen</span>
+                    </div>
+                    <div class="bg-paper p-3 border border-sepia-border/60 rounded-sm card-shadow">
+                        <span id="hours" class="text-2xl sm:text-4xl text-sepia font-semibold block">00</span>
+                        <span class="text-[10px] sm:text-xs font-sans tracking-widest uppercase text-sepia-light">Uur</span>
+                    </div>
+                    <div class="bg-paper p-3 border border-sepia-border/60 rounded-sm card-shadow">
+                        <span id="minutes" class="text-2xl sm:text-4xl text-sepia font-semibold block">00</span>
+                        <span class="text-[10px] sm:text-xs font-sans tracking-widest uppercase text-sepia-light">Min.</span>
+                    </div>
+                    <div class="bg-paper p-3 border border-sepia-border/60 rounded-sm card-shadow">
+                        <span id="seconds" class="text-2xl sm:text-4xl text-sepia font-semibold block">00</span>
+                        <span class="text-[10px] sm:text-xs font-sans tracking-widest uppercase text-sepia-light">Sec.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION DIVIDER -->
+    <div class="flex justify-center my-6">
+        <div class="w-24 h-[1px] bg-sepia-border"></div>
+        <div class="mx-4 text-sepia-muted text-xs">◆</div>
+        <div class="w-24 h-[1px] bg-sepia-border"></div>
+    </div>
+
+    <!-- PROGRAMMA OVERVIEW -->
+    <section id="programma" class="py-20 px-4 max-w-5xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="font-sans text-xs uppercase tracking-[0.25em] text-sepia-light block mb-2">Het Weekend</span>
+            <h2 class="font-display text-4xl sm:text-5xl text-sepia">Programma Overview</h2>
+            <p class="font-serif italic text-lg text-sepia-light mt-3">
+                We vieren ons huwelijk gedurende een heel weekend op het prachtige kasteeldomein van Château de Goyet.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 relative">
+            
+            <!-- Vrijdag -->
+            <div class="bg-cardBg p-8 border border-sepia-border/60 rounded-sm card-shadow flex flex-col justify-between hover:border-sepia/40 transition-all duration-300">
+                <div>
+                    <div class="border-b border-sepia-border/40 pb-4 mb-6 text-center">
+                        <span class="font-sans text-xs uppercase tracking-widest text-sepia-light block">Dag 1</span>
+                        <h3 class="font-display text-2xl text-sepia font-normal mt-1">Vrijdag 2 Juli</h3>
+                        <p class="font-serif text-sm italic text-sepia-light">Welkom &amp; Borrel</p>
+                    </div>
+                    <ul class="space-y-4 font-serif text-base">
+                        <li class="flex items-start">
+                            <span class="font-semibold w-16 shrink-0 text-sepia">16:00</span>
+                            <span class="text-sepia-light">Aankomst &amp; Inchecken</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="font-semibold w-16 shrink-0 text-sepia">18:30</span>
+                            <span class="text-sepia-light">Informele Welkomstborrel &amp; BBQ</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="font-semibold w-16 shrink-0 text-sepia">22:00</span>
+                            <span class="text-sepia-light">Gezellige avond in de kasteeltuin</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-8 pt-4 border-t border-sepia-border/30 text-center font-sans text-xs text-sepia-light">
+                    Kleding: Smart Casual
+                </div>
+            </div>
+
+            <!-- Zaterdag (Hoofddag) -->
+            <div class="bg-cardBg p-8 border-2 border-sepia/60 rounded-sm card-shadow flex flex-col justify-between relative transform md:-translate-y-2">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-sepia text-cream font-sans text-[10px] uppercase tracking-widest px-3 py-1 rounded-full">
+                    Trouwdag
+                </div>
+                <div>
+                    <div class="border-b border-sepia-border pb-4 mb-6 text-center">
+                        <span class="font-sans text-xs uppercase tracking-widest text-sepia-light block">Dag 2</span>
+                        <h3 class="font-display text-3xl text-sepia font-normal mt-1">Zaterdag 3 Juli</h3>
+                        <p class="font-serif text-sm italic text-sepia-light">De Officiële Huwelijksdag</p>
+                    </div>
+                    <ul class="space-y-4 font-serif text-base">
+                        <li class="flex items-start">
+                            <span class="font-semibold w-16 shrink-0 text-sepia">14:00</span>
+                            <span class="text-sepia-dark">Ontvangst gasten</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="font-semibold w-16 shrink-0 text-sepia">14:30</span>
+                            <span class="text-sepia-dark font-medium">Feestelijke Ceremonie</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="font-semibold w-16 shrink-0 text-sepia">16:00</span>
+                            <span class="text-sepia-dark">Proost &amp; Bruidstaart</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="font-semibold w-16 shrink-0 text-sepia">18:30</span>
+                            <span class="text-sepia-dark">Diner in de Orangerie</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="font-semibold w-16 shrink-0 text-sepia">21:00</span>
+                            <span class="text-sepia-dark font-medium">Openingsdans &amp; Feest</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-8 pt-4 border-t border-sepia-border/30 text-center font-sans text-xs text-sepia font-medium">
+                    Kleding: Black Tie Optional / Chic
+                </div>
+            </div>
+
+            <!-- Zondag -->
+            <div class="bg-cardBg p-8 border border-sepia-border/60 rounded-sm card-shadow flex flex-col justify-between hover:border-sepia/40 transition-all duration-300">
+                <div>
+                    <div class="border-b border-sepia-border/40 pb-4 mb-6 text-center">
+                        <span class="font-sans text-xs uppercase tracking-widest text-sepia-light block">Dag 3</span>
+                        <h3 class="font-display text-2xl text-sepia font-normal mt-1">Zondag 4 Juli</h3>
+                        <p class="font-serif text-sm italic text-sepia-light">Katerontbijt &amp; Afscheid</p>
+                    </div>
+                    <ul class="space-y-4 font-serif text-base">
+                        <li class="flex items-start">
+                            <span class="font-semibold w-16 shrink-0 text-sepia">10:00</span>
+                            <span class="text-sepia-light">Uitgebreide Nageniet-Brunch</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="font-semibold w-16 shrink-0 text-sepia">12:30</span>
+                            <span class="text-sepia-light">Afscheid &amp; Uitchecken</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-8 pt-4 border-t border-sepia-border/30 text-center font-sans text-xs text-sepia-light">
+                    Kleding: Comfy &amp; Casual
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LOCATIE & REISINFORMATIE -->
+    <section id="locatie" class="py-20 px-4 bg-paper/60 border-y border-sepia-border/40">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="font-sans text-xs uppercase tracking-[0.25em] text-sepia-light block mb-2">De Locatie</span>
+                <h2 class="font-display text-4xl sm:text-5xl text-sepia">Château de Goyet</h2>
+                <p class="font-serif italic text-lg text-sepia-light mt-2">Gesves, Namur — België</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Location details -->
+                <div class="space-y-6 font-serif">
+                    <div class="bg-cardBg p-6 border border-sepia-border/60 rounded-sm card-shadow">
+                        <h3 class="text-xl text-sepia font-semibold mb-2 font-display">Adresgegevens</h3>
+                        <p class="text-sepia-light leading-relaxed">
+                            <strong>Château de Goyet</strong><br>
+                            Rue de Mozet 7<br>
+                            5340 Gesves, België
+                        </p>
+                        <div class="mt-4 pt-4 border-t border-sepia-border/40">
+                            <a href="https://maps.google.com/?q=Château+de+Goyet+Rue+de+Mozet+7+Gesves+België" 
+                               target="_blank" rel="noopener noreferrer"
+                               class="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-widest text-sepia border border-sepia px-4 py-2 hover:bg-sepia hover:text-cream transition-colors duration-200">
+                               <i class="fa-solid fa-map-pin"></i> Open in Google Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 text-sepia-light text-base">
+                        <h4 class="font-display text-lg text-sepia">Bereikbaarheid</h4>
+                        <p>
+                            Het kasteel ligt in het groene hart van de Samson-vallei in de provincie Namen (België).
+                        </p>
+                        <ul class="space-y-1 list-disc list-inside text-sm">
+                            <li>Vanaf Utrecht: ca. 2 uur 45 min</li>
+                            <li>Vanaf Antwerpen: ca. 1 uur 30 min</li>
+                            <li>Vanaf Maastricht: ca. 1 uur</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Info Card -->
+                <div class="bg-cardBg p-8 border border-sepia-border/60 rounded-sm card-shadow flex flex-col justify-center h-full text-center space-y-4">
+                    <div class="w-16 h-16 mx-auto rounded-full bg-cream border border-sepia-border flex items-center justify-center text-sepia text-2xl">
+                        <i class="fa-solid fa-castle"></i>
+                    </div>
+                    <h3 class="font-display text-2xl text-sepia">Over het Kasteel</h3>
+                    <p class="font-serif text-sepia-light text-base leading-relaxed">
+                        Château de Goyet is een historisch kasteel omgeven door privétuinen, bossen en vijvers. Een sfeervolle sprookjesachtige plek waar we in alle rust samen kunnen vieren.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRAKTISCHE INFORMATIE -->
+    <section id="praktisch" class="py-20 px-4 max-w-5xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="font-sans text-xs uppercase tracking-[0.25em] text-sepia-light block mb-2">Goed om te weten</span>
+            <h2 class="font-display text-4xl sm:text-5xl text-sepia">Praktische Informatie</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <!-- Dresscode -->
+            <div class="bg-cardBg p-8 border border-sepia-border/60 rounded-sm card-shadow text-center space-y-4">
+                <div class="w-12 h-12 mx-auto rounded-full bg-cream border border-sepia-border flex items-center justify-center text-sepia text-xl">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <h3 class="font-display text-2xl text-sepia">Dresscode</h3>
+                <p class="font-serif text-base text-sepia-light leading-relaxed">
+                    <strong>Black Tie Optional / Chic</strong><br>
+                    Dames in een elegante feestelijke jurk, heren in een smoking of stijlvol donker pak.
+                </p>
+            </div>
+
+            <!-- Overnachten -->
+            <div class="bg-cardBg p-8 border border-sepia-border/60 rounded-sm card-shadow text-center space-y-4">
+                <div class="w-12 h-12 mx-auto rounded-full bg-cream border border-sepia-border flex items-center justify-center text-sepia text-xl">
+                    <i class="fa-solid fa-bed"></i>
+                </div>
+                <h3 class="font-display text-2xl text-sepia">Overnachten</h3>
+                <p class="font-serif text-base text-sepia-light leading-relaxed">
+                    Informatie over kamers op het kasteelterrein en B&amp;B's in Gesves &amp; Namur volgt bij de officiële uitnodiging.
+                </p>
+            </div>
+
+            <!-- Cadeautip -->
+            <div class="bg-cardBg p-8 border border-sepia-border/60 rounded-sm card-shadow text-center space-y-4">
+                <div class="w-12 h-12 mx-auto rounded-full bg-cream border border-sepia-border flex items-center justify-center text-sepia text-xl">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
+                <h3 class="font-display text-2xl text-sepia">Cadeautip</h3>
+                <p class="font-serif text-base text-sepia-light leading-relaxed">
+                    Jullie komst is ons grootste cadeau. Mocht je ons toch een attentie willen schenken, dan sparen we voor onze droomhuwelijksreis.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION DIVIDER -->
+    <div class="flex justify-center my-4">
+        <div class="w-24 h-[1px] bg-sepia-border"></div>
+        <div class="mx-4 text-sepia-muted text-xs">◆</div>
+        <div class="w-24 h-[1px] bg-sepia-border"></div>
+    </div>
+
+    <!-- RSVP FORM SECTION -->
+    <section id="rsvp" class="py-20 px-4 max-w-3xl mx-auto">
+        <div class="bg-cardBg p-8 sm:p-12 border border-sepia-border rounded-sm card-shadow relative">
+            
+            <div class="text-center max-w-xl mx-auto mb-10">
+                <span class="font-sans text-xs uppercase tracking-[0.3em] text-sepia-light block mb-2">Aanwezigheid</span>
+                <h2 class="font-display text-4xl sm:text-5xl text-sepia">RSVP Bevestigen</h2>
+                <p class="font-serif italic text-sepia-light mt-2 text-lg">
+                    Laat ons alvast weten of je erbij kunt zijn!
+                </p>
+            </div>
+
+            <!-- RSVP Form -->
+            <form id="rsvp-form" onsubmit="handleRSVPSubmit(event)" class="space-y-6 font-serif">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-sans uppercase tracking-wider text-sepia mb-2" for="guest-name">
+                            Naam &amp; Achternaam *
+                        </label>
+                        <input type="text" id="guest-name" required
+                               class="w-full bg-cream border border-sepia-border p-3 focus:outline-none focus:border-sepia text-sepia rounded-sm font-serif text-base"
+                               placeholder="bijv. Jan &amp; Anna Jansen">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-sans uppercase tracking-wider text-sepia mb-2" for="guest-email">
+                            E-mailadres *
+                        </label>
+                        <input type="email" id="guest-email" required
+                               class="w-full bg-cream border border-sepia-border p-3 focus:outline-none focus:border-sepia text-sepia rounded-sm font-serif text-base"
+                               placeholder="uw.email@example.com">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-sans uppercase tracking-wider text-sepia mb-2">
+                        Aanwezigheid *
+                    </label>
+                    <div class="space-y-3 font-serif text-base text-sepia-dark">
+                        <label class="flex items-center gap-3 cursor-pointer p-3 border border-sepia-border/60 rounded-sm bg-cream/50 hover:bg-cream transition-colors">
+                            <input type="radio" name="attendance" value="full-weekend" checked class="accent-sepia">
+                            <span>Ja, ik ben/wij zijn het <strong>gehele weekend</strong> aanwezig (2 - 4 juli)</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer p-3 border border-sepia-border/60 rounded-sm bg-cream/50 hover:bg-cream transition-colors">
+                            <input type="radio" name="attendance" value="saturday-only" class="accent-sepia">
+                            <span>Ja, ik ben/wij zijn alleen op <strong>zaterdag 3 juli</strong> aanwezig</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer p-3 border border-sepia-border/60 rounded-sm bg-cream/50 hover:bg-cream transition-colors">
+                            <input type="radio" name="attendance" value="declined" class="accent-sepia">
+                            <span>Helaas kan ik / kunnen wij er niet bij zijn</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-sans uppercase tracking-wider text-sepia mb-2" for="dietary">
+                        Dieetwensen of Allergieën
+                    </label>
+                    <input type="text" id="dietary"
+                           class="w-full bg-cream border border-sepia-border p-3 focus:outline-none focus:border-sepia text-sepia rounded-sm font-serif text-base"
+                           placeholder="bijv. Vegetarisch, glutenvrij...">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-sans uppercase tracking-wider text-sepia mb-2" for="message">
+                        Bericht voor het Bruidspaar
+                    </label>
+                    <textarea id="message" rows="4"
+                              class="w-full bg-cream border border-sepia-border p-3 focus:outline-none focus:border-sepia text-sepia rounded-sm font-serif text-base"
+                              placeholder="Laat een lief berichtje of vraag achter..."></textarea>
+                </div>
+
+                <div class="text-center pt-4">
+                    <button type="submit"
+                            class="px-8 py-3 bg-sepia text-cream hover:bg-sepia-dark transition-all duration-300 font-sans text-xs uppercase tracking-[0.2em] font-medium rounded-sm">
+                        Verstuur Bevestiging
+                    </button>
+                </div>
+            </form>
+
+            <!-- Success Confirmation Popup -->
+            <div id="confirmation-message" class="hidden text-center py-12 space-y-4">
+                <div class="w-16 h-16 mx-auto rounded-full bg-cream border border-sepia flex items-center justify-center text-sepia text-2xl">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <h3 class="font-display text-3xl text-sepia">Bedankt voor je reactie!</h3>
+                <p class="font-serif italic text-lg text-sepia-light max-w-md mx-auto">
+                    We hebben je RSVP in goede orde ontvangen. We kijken er enorm naar uit om dit bijzondere weekend samen te vieren!
+                </p>
+                <button onclick="resetRSVPForm()" class="mt-4 text-xs font-sans uppercase tracking-widest text-sepia underline">
+                    Nog een reactie versturen
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t border-sepia-border text-center bg-paper/40">
+        <div class="max-w-4xl mx-auto px-4 space-y-4">
+            <h4 class="font-display text-3xl text-sepia">Jorn &amp; Reanne</h4>
+            <p class="font-serif text-base italic text-sepia-light">3 Juli 2027 — Château de Goyet</p>
+            <p class="font-sans text-[10px] uppercase tracking-widest text-sepia-muted pt-4">
+                De officiële uitnodiging volgt later.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Countdown Timer Logic
+        function updateCountdown() {
+            const targetDate = new Date('July 3, 2027 14:00:00').getTime();
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = String(days).padStart(3, '0');
+                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+            } else {
+                document.getElementById('countdown').innerHTML = "<p class='font-serif text-2xl text-sepia col-span-4'>Vandaag is de dag!</p>";
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMenu);
+
+        // RSVP Form Submission Handler
+        function handleRSVPSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('guest-name').value;
+            const email = document.getElementById('guest-email').value;
+            const attendance = document.querySelector('input[name="attendance"]:checked').value;
+            const dietary = document.getElementById('dietary').value;
+            const message = document.getElementById('message').value;
+
+            const rsvpData = {
+                name,
+                email,
+                attendance,
+                dietary,
+                message,
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                const existingData = JSON.parse(localStorage.getItem('wedding_rsvps') || '[]');
+                existingData.push(rsvpData);
+                localStorage.setItem('wedding_rsvps', JSON.stringify(existingData));
+            } catch (e) {
+                console.log('LocalStorage missing or restricted:', e);
+            }
+
+            document.getElementById('rsvp-form').classList.add('hidden');
+            document.getElementById('confirmation-message').classList.remove('hidden');
+        }
+
+        function resetRSVPForm() {
+            document.getElementById('rsvp-form').reset();
+            document.getElementById('rsvp-form').classList.remove('hidden');
+            document.getElementById('confirmation-message').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
